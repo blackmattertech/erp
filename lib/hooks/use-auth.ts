@@ -30,11 +30,13 @@ export function useAuth() {
         setUser(user)
 
         // Fetch profile in parallel, don't block on it
-        void supabase
-          .from('profiles')
-          .select('*')
-          .eq('id', user.id)
-          .single()
+        Promise.resolve(
+          supabase
+            .from('profiles')
+            .select('*')
+            .eq('id', user.id)
+            .single()
+        )
           .then(({ data: profile }) => {
             if (mounted) {
               setProfile(profile)
@@ -69,11 +71,13 @@ export function useAuth() {
         } else if (event === 'SIGNED_IN' && session) {
           setUser(session.user)
           // Fetch profile but don't block
-          void supabase
-            .from('profiles')
-            .select('*')
-            .eq('id', session.user.id)
-            .single()
+          Promise.resolve(
+            supabase
+              .from('profiles')
+              .select('*')
+              .eq('id', session.user.id)
+              .single()
+          )
             .then(({ data: profile }) => {
               if (mounted) {
                 setProfile(profile)
