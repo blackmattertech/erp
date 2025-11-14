@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { useAuth } from '@/lib/hooks/use-auth'
 import { Bell, Search, User, Settings, LogOut } from 'lucide-react'
 import { Input } from '@/components/ui/input'
@@ -48,9 +49,11 @@ export function Header() {
               onClick={() => setShowUserMenu(!showUserMenu)}
             >
               {profile?.avatar_url ? (
-                <img
+                <Image
                   src={profile.avatar_url}
                   alt={profile.full_name || 'User'}
+                  width={40}
+                  height={40}
                   className="h-10 w-10 rounded-full object-cover border-2 border-border"
                 />
               ) : (
@@ -70,9 +73,11 @@ export function Header() {
                   <div className="p-4 border-b">
                     <div className="flex items-center gap-3 mb-3">
                       {profile?.avatar_url ? (
-                        <img
+                        <Image
                           src={profile.avatar_url}
                           alt={profile.full_name || 'User'}
+                          width={48}
+                          height={48}
                           className="h-12 w-12 rounded-full object-cover border-2 border-border"
                         />
                       ) : (

@@ -114,7 +114,7 @@ export default function ClientDashboardPage() {
       <div className="space-y-6">
         <div>
           <h1 className="text-3xl font-bold">Client Dashboard</h1>
-          <p className="text-muted-foreground">Welcome! Here's an overview of your account</p>
+          <p className="text-muted-foreground">Welcome! Here&apos;s an overview of your account</p>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">

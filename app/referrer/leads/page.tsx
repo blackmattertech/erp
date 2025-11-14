@@ -32,7 +32,7 @@ export default async function ReferrerLeadsPage() {
       <div className="space-y-6">
         <div>
           <h1 className="text-3xl font-bold">My Leads</h1>
-          <p className="text-muted-foreground">Track all leads you've referred</p>
+          <p className="text-muted-foreground">Track all leads you&apos;ve referred</p>
         </div>
 
         <LeadsTable leads={leads || []} />
