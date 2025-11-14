@@ -112,7 +112,7 @@ export default async function FreelancerDashboardPage() {
               <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {freelancer.skills && freelancer.skills.length > 0 ? (
-                    freelancer.skills.map((skill, index) => (
+                    freelancer.skills.map((skill: string, index: number) => (
                       <span
                         key={index}
                         className="px-2 py-1 bg-secondary text-secondary-foreground rounded text-sm"

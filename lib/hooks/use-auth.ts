@@ -30,7 +30,7 @@ export function useAuth() {
         setUser(user)
 
         // Fetch profile in parallel, don't block on it
-        supabase
+        void supabase
           .from('profiles')
           .select('*')
           .eq('id', user.id)
@@ -69,7 +69,7 @@ export function useAuth() {
         } else if (event === 'SIGNED_IN' && session) {
           setUser(session.user)
           // Fetch profile but don't block
-          supabase
+          void supabase
             .from('profiles')
             .select('*')
             .eq('id', session.user.id)
